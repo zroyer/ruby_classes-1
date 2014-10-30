@@ -7,8 +7,8 @@ class Cookbook
 		@recipes = []
 	end	
 
-	def add_recipe(Recipe)
-		@recipes.push(Recipe.new)
+	def add_recipe(recipe)
+		@recipes.push(recipe)
 	end
 end
 
