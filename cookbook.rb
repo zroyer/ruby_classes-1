@@ -10,6 +10,14 @@ class Cookbook
 	def add_recipe(recipe)
 		@recipes.push(recipe)
 	end
+
+	def recipe_titles
+		@recipes.each do |sub_array|
+			sub_array.each do |title, ingredients, steps|
+				puts title
+			end
+		end
+	end
 end
 
 
