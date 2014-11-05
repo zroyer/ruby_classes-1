@@ -25,7 +25,7 @@ class Bank
 	end
 
 	def withdraw(person, amount)
-		if (amount > @accounts[person.name])		#if the amount attemtempted to withdraw is more than is actually in the account
+		if (amount > @accounts[person.name])	#if the amount attemtempted to withdraw is more than is actually in the account
 			puts "#{person.name} does not have enough funds in their account to withdraw that amount."
 		else									#if there are enough funds to withdraw
 			person.cash += amount				#give the cash to the person
