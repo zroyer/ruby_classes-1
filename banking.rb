@@ -2,7 +2,7 @@
 
 class Bank
 	attr_reader :bank
-	attr_accessor :accounts
+	attr_reader :accounts
 
 	def initialize(bank)
 		@bank = bank 									#name of the banking institution
@@ -17,7 +17,7 @@ class Bank
 
 	def withdraw(person, amount)
 		if (amount > @accounts[person.name])			#Extra Credit level 1: Validate - if the amount attemtempted to withdraw is more than is actually in the account
-			puts "#{person.name} does not have enough money in the account to withdraw $#{amount}"
+			puts "#{person.name} does not have enough money in the account to withdraw $#{amount} (#{person.name} only has $#{@accounts[person.name]} in the account)."
 		else											#if there are enough funds to withdraw
 			@accounts[person.name] -= amount			#take the money from the person's account
 			person.cash += amount						#give the cash to the person
@@ -27,7 +27,7 @@ class Bank
 
 	def deposit(person, amount)
 		if (amount > person.cash)						#Extra Credit level 1: Validate - if the person tries to deposit more cash than they have on hand
-			puts "#{person.name} does not have enough cash to deposit $#{amount}. (#{person.name} only has $#{person.cash})"
+			puts "#{person.name} does not have enough cash to deposit $#{amount} (#{person.name} only has $#{person.cash} cash)."
 		else											#if the person deposits an amount less than or equal to their cash on hand
 			@accounts[person.name] += amount			#put that money into the person's account
 			person.cash -= amount						#take the cash from the person			
@@ -37,7 +37,7 @@ class Bank
 
 	def transfer(person, recipient, amount)
 		if(amount > @accounts[person.name])				#Extra Credit level 1: Validate - if the person does NOT have enough money in the benefactor account
-			puts "#{person.name} does not have enough money in the account to transfer $#{amount}"
+			puts "#{person.name} does not have enough money in the account to transfer $#{amount}."
 		else											#if the person DOES have enough money in the benefactor account
 			@accounts[person.name] -= amount			#take the money out of the benefactor account
 			recipient.accounts[person.name] += amount	#put the money into the recipient account
