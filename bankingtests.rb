@@ -13,4 +13,7 @@ chase.deposit(me, 200) #Shehzan deposited $200 to JP Morgan Chase. Shehzan has $
 chase.deposit(friend1, 300) #John deposited $300 to JP Morgan Chase. John has $700. John's account has $300.
 chase.withdraw(me, 50) #Shehzan withdrew $50 from JP Morgan Chase. Shehzan has $350. Shehzan's account has $150.
 
-#chase.transfer(me, wells_fargo, 100) #Shehzan transfered $100 from the JP Morgan Chase account to the Wells Fargo account. The JP Morgan Chase account has $50 and the Wells Fargo account has $100.
+chase.transfer(me, wells_fargo, 100) #Shehzan transfered $100 from the JP Morgan Chase account to the Wells Fargo account. The JP Morgan Chase account has $50 and the Wells Fargo account has $100.
+
+puts chase.total_cash_in_bank #JP Morgan has $350 in the bank.
+puts wells_fargo.total_cash_in_bank #Wells Fargo has $100 in the bank.
