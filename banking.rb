@@ -1,8 +1,7 @@
 #Zach Royer's MakerSquare Technical Interview Coding Challenge 
 
 class Bank
-	attr_reader :bank
-	attr_reader :accounts
+	attr_reader :bank, :accounts
 
 	def initialize(bank)
 		@bank = bank 									#name of the banking institution
@@ -16,7 +15,7 @@ class Bank
 	end
 
 	def withdraw(person, amount)
-		if 	amount > @accounts[person.name]			#Extra Credit level 1: Validate - if the amount attemtempted to withdraw is more than is actually in the account
+		if 	amount > @accounts[person.name]				#Extra Credit level 1: Validate - if the amount attemtempted to withdraw is more than is actually in the account
 			puts "#{person.name} does not have enough money in the account to withdraw $#{amount} (#{person.name} only has $#{@accounts[person.name]} in the account)."
 		else											#if there are enough funds to withdraw
 			@accounts[person.name] -= amount			#take the money from the person's account
