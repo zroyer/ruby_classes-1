@@ -1,16 +1,5 @@
 #Zach Royer's MakerSquare Technical Interview Coding Challenge 
 
-class Person
-	attr_reader :name
-	attr_accessor :cash
-
-    def initialize(name, cash)
-        @name = name.downcase.capitalize				#person's name
-        @cash = cash									#amount of cash this person has on hand
-        puts "Hi, #{@name}. You have $#{@cash}!"
-    end
-end
-
 class Bank
 	attr_reader :bank
 	attr_accessor :accounts
@@ -61,7 +50,36 @@ class Bank
 		accounts.each do |person, balance|				#loop through the account hash
 			cash += balance								#add each person's account balance to the total
 		end
-		puts "#{bank} has $#{cash} in the bank."
+		"#{bank} has $#{cash} in the bank."
 	end
 end
 
+class Person
+	attr_reader :name
+	attr_accessor :cash
+
+    def initialize(name, cash)
+        @name = name.downcase.capitalize				#person's name
+        @cash = cash									#amount of cash this person has on hand
+        puts "Hi, #{@name}. You have $#{@cash}!"
+    end
+end
+
+
+# Test code:
+chase = Bank.new("JP Morgan Chase")
+wells_fargo = Bank.new("Wells Fargo")
+me = Person.new("Shehzan", 500)
+friend1 = Person.new("John", 1000)
+chase.open_account(me)
+chase.open_account(friend1)
+wells_fargo.open_account(me)
+wells_fargo.open_account(friend1)
+chase.deposit(me, 200)
+chase.deposit(friend1, 300)
+chase.withdraw(me, 50)
+chase.transfer(me, wells_fargo, 100)
+chase.deposit(me, 5000)
+chase.withdraw(me, 5000)
+puts chase.total_cash_in_bank
+puts wells_fargo.total_cash_in_bank
