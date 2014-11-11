@@ -82,3 +82,5 @@ chase.deposit(me, 5000)
 chase.withdraw(me, 5000)
 puts chase.total_cash_in_bank
 puts wells_fargo.total_cash_in_bank
+
+#https://gist.github.com/zroyer/9cd10417fc4f3b1ec51f
